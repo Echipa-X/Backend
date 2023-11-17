@@ -4,6 +4,7 @@ Se descarcă și instalează Node.js.
 npm init -y
 
 npm install mongoose express body-parser
+npm install faker@5.5.1
 
 
 Pentru a vizualiza și interacționa cu baza de date MongoDB, poți utiliza MongoDB Compass:

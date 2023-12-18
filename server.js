@@ -29,18 +29,18 @@ mongoose.connect('mongodb://localhost:27017/CSU_Suceava_DataBase', {
 app.use(bodyParser.json());
 
 // Folosește routerele pentru entitățile respective
-app.use('/jucatori', jucatorRouter);
-app.use('/echipe', echipaRouter);
-app.use('/clasament', clasamentRouter);
-app.use('/performante', performanteRouter);
-app.use('/galerie_media', galerieMediaRouter);
-app.use('/antrenori', antrenorRouter);
-app.use('/meciuri', meciRouter);
-app.use('/bilete', biletRouter);
-app.use('/stiri', stireRouter);
-app.use('/roluri', rolRouter);
-app.use('/personal', personalRouter);
-app.use('/log_in', logInRouter);
+app.use('/jucatori', jucatorRouter);//done
+app.use('/echipe', echipaRouter); //done
+app.use('/clasament', clasamentRouter);//done
+app.use('/performante', performanteRouter);//done
+app.use('/galerie_media', galerieMediaRouter);//done
+app.use('/antrenori', antrenorRouter);//done
+app.use('/meciuri', meciRouter);//done
+app.use('/bilete', biletRouter);//done
+app.use('/stiri', stireRouter);//done
+app.use('/roluri', rolRouter);//done
+app.use('/personal', personalRouter);//done
+app.use('/log_in', logInRouter);//done
 
 // Alte rute pentru alte entități sau alte acțiuni
 

@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 
 // Folosește routerele pentru entitățile respective
 app.use('/jucatori', jucatorRouter);
-app.use('/echipe', echipaRouter);
+app.use('/echipe', echipaRouter); 
 app.use('/clasament', clasamentRouter);
 app.use('/performante', performanteRouter);
 app.use('/galerie_media', galerieMediaRouter);

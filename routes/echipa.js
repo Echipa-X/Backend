@@ -22,7 +22,7 @@ router.get('/:id', async(req, res) => {
   }
 });
 // Ruta pentru adaugarea unei echpe noi
-router.post('/adauga', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const echipaNoua = await Echipa.create(req.body);
     res.json(echipaNoua);
@@ -31,7 +31,7 @@ router.post('/adauga', async (req, res) => {
   }
 });
 // Ruta pentru modificarea unei echipe existente
-router.put('/modifica/:id', async(req, res) => {
+router.put('/:id', async(req, res) => {
   try {
     const echipa = await Echipa.findByIdAndUpdate(req.params.id, req.body);
     res.json(echipa);
@@ -40,7 +40,7 @@ router.put('/modifica/:id', async(req, res) => {
   }
 });
 // Ruta pentru stergerea unei echipe existente
-router.delete('/sterge/:id', async(req, res) => {
+router.delete('/:id', async(req, res) => {
   try {
     const id = req.params.id;
     const deleted = await Echipa.findByIdAndDelete(id);

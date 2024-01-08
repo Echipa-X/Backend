@@ -23,7 +23,7 @@ router.get('/:id', async(req, res) => {
 });
 // Ruta pentru adaugarea unei echpe noi
 
-router.post('/adauga', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const clasamentNou = await Clasament.create(req.body);
     res.json(clasamentNou);
@@ -34,7 +34,7 @@ router.post('/adauga', async (req, res) => {
 
 // Alte rute pentru operatii CRUD cu Clasament
 // Ruta pentru modificarea unei clasamente existente
-router.put('/modifica/:id', async(req, res) => {
+router.put('/:id', async(req, res) => {
   try {
     const clasament = await Clasament.findByIdAndUpdate(req.params.id, req.body);
     res.json(clasament);
@@ -43,7 +43,7 @@ router.put('/modifica/:id', async(req, res) => {
   }
 });
 // Ruta pentru stergerea unei clasamente existente
-router.delete('/sterge/:id', async(req, res) => {
+router.delete('/:id', async(req, res) => {
   try {
     const id = req.params.id;
     const deleted = await Clasament.findByIdAndDelete(id);

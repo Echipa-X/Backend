@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const LogIn = require('../models/log_in');
 
-router.post('/adauga', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const logInNou = await LogIn.create(req.body);
     res.json(logInNou);
@@ -32,7 +32,7 @@ router.get('/:id', async(req, res) => {
   }
 });
 // Ruta pentru modificarea unei logInuri existente
-router.put('/modifica/:id', async(req, res) => {
+router.put('/:id', async(req, res) => {
   try {
     const logIn = await LogIn.findByIdAndUpdate(req.params.id, req.body);
     res.json(logIn);
@@ -41,7 +41,7 @@ router.put('/modifica/:id', async(req, res) => {
   }
 });
 // Ruta pentru stergerea unei logInuri existente
-router.delete('/sterge/:id', async(req, res) => {
+router.delete('/:id', async(req, res) => {
   try {
     const id = req.params.id;
     const deleted = await LogIn.findByIdAndDelete(id);

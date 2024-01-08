@@ -21,7 +21,7 @@ router.get('/:id', async(req, res) => {
   }
 });
 // Ruta pentru adaugarea unei echpe noi
-router.post('/adauga', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const biletNou = await Bilet.create(req.body);
     res.json(biletNou);
@@ -32,7 +32,7 @@ router.post('/adauga', async (req, res) => {
 
 // Alte rute pentru operatii CRUD cu Bilet
 // Ruta pentru modificarea unei bilete existente
-router.put('/modifica/:id', async(req, res) => {
+router.put('/:id', async(req, res) => {
   try {
     const bilet = await Bilet.findByIdAndUpdate(req.params.id, req.body);
     res.json(bilet);
@@ -41,7 +41,7 @@ router.put('/modifica/:id', async(req, res) => {
   }
 });
 // Ruta pentru stergerea unei bilete existente
-router.delete('/sterge/:id', async(req, res) => {
+router.delete('/:id', async(req, res) => {
   try {
     const id = req.params.id;
     const deleted = await Bilet.findByIdAndDelete(id);

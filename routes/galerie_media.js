@@ -20,7 +20,7 @@ router.get('/:id', async(req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
-router.post('/adauga', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const mediaNoua = await GalerieMedia.create(req.body);
     res.json(mediaNoua);
@@ -31,7 +31,7 @@ router.post('/adauga', async (req, res) => {
 
 // Alte rute pentru operatii CRUD cu Galerie_Media
 // Ruta pentru modificarea unei galerii existente
-router.put('/modifica/:id', async(req, res) => {
+router.put('/:id', async(req, res) => {
   try {
     const galeria = await GalerieMedia.findByIdAndUpdate(req.params.id, req.body);
     res.json(galeria);
@@ -40,7 +40,7 @@ router.put('/modifica/:id', async(req, res) => {
   }
 });
 // Ruta pentru stergerea unei galerii existente
-router.delete('/sterge/:id', async(req, res) => {
+router.delete('/:id', async(req, res) => {
   try {
     const id = req.params.id;
     const deleted = await GalerieMedia.findByIdAndDelete(id);

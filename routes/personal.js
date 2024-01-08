@@ -22,7 +22,7 @@ router.get('/:id', async(req, res) => {
   }
 });
 // Ruta pentru adaugarea unui personal nou
-router.post('/adauga', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const personalNou = await Personal.create(req.body);
     res.json(personalNou);
@@ -33,7 +33,7 @@ router.post('/adauga', async (req, res) => {
 
 // Alte rute pentru operatii CRUD cu Personal
 // Ruta pentru modificarea unui personal existent
-router.put('/modifica/:id', async(req, res) => {
+router.put('/:id', async(req, res) => {
   try {
     const personal = await Personal.findByIdAndUpdate(req.params.id, req.body);
     res.json(personal);
@@ -42,7 +42,7 @@ router.put('/modifica/:id', async(req, res) => {
   }
 });
 // Ruta pentru stergerea unui personal existent
-router.delete('/sterge/:id', async(req, res) => {
+router.delete('/:id', async(req, res) => {
   try {
     const id = req.params.id;
     const deleted = await Personal.findByIdAndDelete(id);

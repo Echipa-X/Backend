@@ -22,7 +22,7 @@ router.get('/:id', async(req, res) => {
   }
 });
 // Ruta pentru adaugarea unei echpe noi
-router.post('/adauga', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const jucatorNou = await Jucator.create(req.body);
     res.json(jucatorNou);
@@ -31,7 +31,7 @@ router.post('/adauga', async (req, res) => {
   }
 });
 // Ruta pentru modificarea unui jucator existent
-router.put('/modifica/:id', async(req, res) => {
+router.put('/:id', async(req, res) => {
   try {
     const jucator = await Jucator.findByIdAndUpdate(req.params.id, req.body);
     res.json(jucator);
@@ -40,7 +40,7 @@ router.put('/modifica/:id', async(req, res) => {
   }
 });
 // Ruta pentru stergerea unui jucator existent
-router.delete('/sterge/:id', async(req, res) => {
+router.delete('/:id', async(req, res) => {
   try {
     const id = req.params.id;
     const deleted = await Jucator.findByIdAndDelete(id);

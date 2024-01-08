@@ -22,7 +22,7 @@ router.get('/:id', async(req, res) => {
   }
 });
 // Ruta pentru adaugarea unei echpe noi
-router.post('/adauga', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const antrenorNou = await Antrenor.create(req.body);
     res.json(antrenorNou);
@@ -33,7 +33,7 @@ router.post('/adauga', async (req, res) => {
 
 // Alte rute pentru operatii CRUD cu Antrenor
 // Ruta pentru modificarea unei antrenori existente
-router.put('/modifica/:id', async(req, res) => {
+router.put('/:id', async(req, res) => {
   try {
     const antrenor = await Antrenor.findByIdAndUpdate(req.params.id, req.body);
     res.json(antrenor);
@@ -42,7 +42,7 @@ router.put('/modifica/:id', async(req, res) => {
   }
 });
 // Ruta pentru stergerea unei antrenori existente
-router.delete('/sterge/:id', async(req, res) => {
+router.delete('/:id', async(req, res) => {
   try {
     const id = req.params.id;
     const deleted = await Antrenor.findByIdAndDelete(id);

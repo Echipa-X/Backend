@@ -21,7 +21,7 @@ router.get('/:id', async(req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
-router.post('/adauga', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const performantaNoua = await Performante.create(req.body);
     res.json(performantaNoua);
@@ -33,7 +33,7 @@ router.post('/adauga', async (req, res) => {
 
 // Alte rute pentru operatii CRUD cu Performante
 // Ruta pentru modificarea unei performantae existente
-router.put('/modifica/:id', async(req, res) => {
+router.put('/:id', async(req, res) => {
   try {
     const performanta = await Performante.findByIdAndUpdate(req.params.id, req.body);
     res.json(performanta);
@@ -42,7 +42,7 @@ router.put('/modifica/:id', async(req, res) => {
   }
 });
 // Ruta pentru stergerea unei performanta existente
-router.delete('/sterge/:id', async(req, res) => {
+router.delete('/:id', async(req, res) => {
   try {
     const id = req.params.id;
     const deleted = await Performante.findByIdAndDelete(id);

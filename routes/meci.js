@@ -20,7 +20,7 @@ router.get('/:id', async(req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
-router.post('/adauga', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const meciNou = await Meci.create(req.body);
     res.json(meciNou);
@@ -31,7 +31,7 @@ router.post('/adauga', async (req, res) => {
 
 // Alte rute pentru operatii CRUD cu Meci
 // Ruta pentru modificarea unei meciuri existente
-router.put('/modifica/:id', async(req, res) => {
+router.put('/:id', async(req, res) => {
   try {
     const meci = await Meci.findByIdAndUpdate(req.params.id, req.body);
     res.json(meci);
@@ -40,7 +40,7 @@ router.put('/modifica/:id', async(req, res) => {
   }
 });
 // Ruta pentru stergerea unei meciuri existente
-router.delete('/sterge/:id', async(req, res) => {
+router.delete('/:id', async(req, res) => {
   try {
     const id = req.params.id;
     const deleted = await Meci.findByIdAndDelete(id);

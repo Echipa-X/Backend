@@ -21,7 +21,7 @@ router.get('/:id', async(req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
-router.post('/adauga', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const rolNou = await Rol.create(req.body);
     res.json(rolNou);
@@ -32,7 +32,7 @@ router.post('/adauga', async (req, res) => {
 
 // Alte rute pentru operatii CRUD cu Rol
 // Ruta pentru modificarea unei roluri existente
-router.put('/modifica/:id', async(req, res) => {
+router.put('/:id', async(req, res) => {
   try {
     const rol = await Rol.findByIdAndUpdate(req.params.id, req.body);
     res.json(rol);
@@ -41,7 +41,7 @@ router.put('/modifica/:id', async(req, res) => {
   }
 });
 // Ruta pentru stergerea unei roluri existente
-router.delete('/sterge/:id', async(req, res) => {
+router.delete('/:id', async(req, res) => {
   try {
     const id = req.params.id;
     const deleted = await Rol.findByIdAndDelete(id);
